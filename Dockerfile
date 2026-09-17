@@ -39,4 +39,4 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
 # this image resolves to CPU (CoreML / CUDA execution providers are not installed).
 # Pinning `--device cpu` here used to silently override `-e SUPERTONIC_DEVICE=...`
 # from the environment, which made the GPU story misleading for anyone trying it.
-ENTRYPOINT ["supertonic-server"]
+ENTRYPOINT ["supertonic-server --device cpu"]
